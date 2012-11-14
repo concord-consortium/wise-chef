@@ -1,2 +1,12 @@
 /cookbooks
 /tmp
+wise4-step-types.yml
+Gemfile.lock
+bin
+.bundle
+.rvmrc
+*.pem
+.fog
+credentials.config
+dna.json
+cookbooks.tgz
