@@ -7,12 +7,12 @@ require 'json'
 class EC2Packager
 
   def initialize(_path=".")
-    @vagrant_root = File.expand_path(_path)
-    self.generate_dna_files
+    @root_dir = File.expand_path(_path)
+    # self.generate_dna_files  # TODO:  WE are skipping this
   end
 
   def cookbook_directory
-    File.join(@vagrant_root,"cookbooks")
+    path("cookbooks")
   end
 
   def cookbook_archive_file
@@ -20,23 +20,28 @@ class EC2Packager
   end
 
   def dna_file
-    File.join(@vagrant_root,'dna.json')
+    path('dna.json')
   end
 
   def cookbooks_json_path
-    File.join(@vagrant_root, '.cookbooks_path.json')
+   path('.cookbooks_path.json')
   end
 
   def create_tarfile
     cd do
       # hack to make tarfile use relative paths ..
-      dir = cookbook_directory.gsub(@vagrant_root,'').gsub(/^\//,'')
+      dir = cookbook_directory.gsub(@root_dir,'').gsub(/^\//,'')
       tar_command = "tar czf #{cookbook_archive_file} #{dir} 2> /dev/null"
       %x[#{tar_command}]
     end
   end
 
   protected
+  
+  def path(filename)
+    File.join(@root_dir,filename)
+  end
+
   # First modify the VagrantFile according to instructions here: https://github.com/lynaghk/vagrant-ec2
   # use the Vagrant file to configure cookbooks
   def generate_dna_files
@@ -57,7 +62,7 @@ class EC2Packager
   end
 
   def cd
-    Dir.chdir @vagrant_root do
+    Dir.chdir @root_dir do
       yield
     end
   end
