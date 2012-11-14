@@ -2,6 +2,7 @@
 /tmp
 wise4-step-types.yml
 Gemfile.lock
+Cheffile.lock
 bin
 .bundle
 .rvmrc
