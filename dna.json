@@ -1,0 +1,1 @@
+{"tomcat":{"java_options":"-Xms128m -Xmx256m -XX:PermSize=128m -XX:MaxPermSize=256m"},"mysql":{"server_root_password":"password","bind_address":"127.0.0.1"},"wise4_port":8080,"build_wise_from_source":null,"run_list":["recipe[vagrant_main]"]}
