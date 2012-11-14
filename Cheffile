@@ -1,18 +1,22 @@
 site "http://community.opscode.com/api/v1"
 
-cookbook "wise",
-  :path => "vendor/cookbooks/cloudera-cookbook"
+cookbook "apt"
+cookbook "openssl"
+cookbook "git"
+#cookbook "subversion"
+cookbook "vim"
+cookbook "ant"
 
-cookbook "ant", path => "/Users/npaessel/lab/git/wise-cookbooks"
-cookbook "apt", path => "/Users/npaessel/lab/git/wise-cookbooks"
-cookbook "emacs", path => "/Users/npaessel/lab/git/wise-cookbooks"
-cookbook "git", path => "/Users/npaessel/lab/git/wise-cookbooks"
-cookbook "java", path => "/Users/npaessel/lab/git/wise-cookbooks"
-cookbook "maven", path => "/Users/npaessel/lab/git/wise-cookbooks"
-cookbook "mysql", path => "/Users/npaessel/lab/git/wise-cookbooks"
-cookbook "openssl", path => "/Users/npaessel/lab/git/wise-cookbooks"
-cookbook "subversion", path => "/Users/npaessel/lab/git/wise-cookbooks"
-cookbook "tomcat", path => "/Users/npaessel/lab/git/wise-cookbooks"
-cookbook "vagrant_main", path => "/Users/npaessel/lab/git/wise-cookbooks"
-cookbook "vim", path => "/Users/npaessel/lab/git/wise-cookbooks"
-cookbook "wise4", path => "/Users/npaessel/lab/git/wise-cookbooks"
+cookbook "emacs"
+cookbook "mysql"
+
+cookbook "java"
+cookbook "maven"
+cookbook "tomcat"
+
+
+#cookbook "vagrant_main", 
+#  git => "file:///Users/npaessel/lab/git/wise-cookbooks/"
+#  path =
+cookbook "wise4",
+  :git => "file:///Users/npaessel/lab/git/wise-cookbooks/"
