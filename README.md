@@ -1,19 +1,36 @@
 
+## Overview ##
+
+An initial skeleton project for a wise-4 deployment tool.
+
+## requirements: ##
+
+* ruby
+* [rvm][rvm] (recommended)
+
+## Setup Will install: ## ##
+
+* [bunlder][bundler]
+* [librarian][librarian]
+
+## Setup Steps ##
+
+    cp rvmrc.sample ./.rvmrc
+    # optionally edit ./.rvmrc to choose your own rubies / gem files
+    srouce ./.rvmrc
+    gem install bundler
+    bundle install
+    bundle exec librarian-chef install
+
 ## References ##
 ---
 
 - [Librarian][librarian]
-- http://wiki.opscode.com/display/chef/Chef+Solo
-- http://wiki.opscode.com/display/chef/Resources
-- http://wiki.opscode.com/display/chef/Deploy+Resource
-
-
-### Older References ###
-- http://vagrantup.com/docs/getting-started/index.html
-- http://vagrantup.com/docs/provisioners/chef_solo.html
+- [chef][chef]
+- [little-chef][little-chef]
 
 
 [librarian]: https://github.com/applicationsonline/librarian
-[chef]:
-[little-chef]:
-[bundler]:
+[chef]: http://wiki.opscode.com/display/chef/Chef+Solo
+[little-chef]: https://github.com/tobami/littlechef
+[bundler]: http://gembundler.com/
