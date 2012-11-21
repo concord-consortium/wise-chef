@@ -3,7 +3,7 @@
 
 ## Overview ##
 
- This project aims to be a [WISE][WISE] deployment tool. It helps developers setup a WISE4 portal, in order to test their WISE4 steps It will eventually mrege with or replace the [wise-vagrant][wise-vagrant] project.
+ This project aims to be a [WISE][WISE] deployment tool. It helps developers setup a WISE4 portal, in order to test their WISE4 steps It will eventually merge with or replace the [wise4-vagrant][wise4-vagrant] project.
 
 It uses Librian to install and import chef cookbooks into ./cookbooks. Currently it uses the [wise-cookbooks][wise-cookbooks] repo.
 
@@ -41,7 +41,7 @@ It uses Librian to install and import chef cookbooks into ./cookbooks. Currently
 ## References ##
 
 - [wise-cookbooks][wise-cookbooks]
-- [wise-vagrant][wise-vagrant]
+- [wise4-vagrant][wise4-vagrant]
 - [Librarian][librarian]
 - [chef][chef]
 - [little-chef][little-chef]
