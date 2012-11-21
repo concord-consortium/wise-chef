@@ -3,7 +3,6 @@ site "http://community.opscode.com/api/v1"
 cookbook "apt"
 cookbook "openssl"
 cookbook "git"
-#cookbook "subversion"
 cookbook "vim"
 cookbook "ant"
 
@@ -11,12 +10,11 @@ cookbook "emacs"
 cookbook "mysql"
 
 cookbook "java"
-cookbook "maven"
+#cookbook "maven"  # this cookbook isn't working from opscode.
 cookbook "tomcat"
 
+cookbook "vagrant_main", 
+  :git => "file:///Users/npaessel/lab/git/wise-cookbooks/"
 
-#cookbook "vagrant_main", 
-#  git => "file:///Users/npaessel/lab/git/wise-cookbooks/"
-#  path =
 cookbook "wise4",
   :git => "file:///Users/npaessel/lab/git/wise-cookbooks/"
