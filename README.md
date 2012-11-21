@@ -31,6 +31,14 @@ It uses Librian to install and import chef cookbooks into ./cookbooks. Currently
     # optionally move some pem files into config/keys
     bundle exec thor cloud new
 
+## updating the cookbooks ##
+
+if you want to change the wise4 recipes, checkout the wise-cookbooks repo, and make changes, and push them.  Then run the librarian update command:
+    
+    bundle exec librarian-chef update
+
+
+
 ## TODO ##
 
 * simplify
