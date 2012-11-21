@@ -22,7 +22,7 @@ class CloudHelper
 
   def initialize(configuration_file=CloudHelper.config_file)
     #TODO: we need a way to specify vagrant root better...
-    @vagrant_root = File.join(Dir.pwd(),'rebuild')
+    @vagrant_root = Dir.pwd()
     @config = YAML::load(File.open(configuration_file))
     Fog.credentials_path = CloudHelper.config_file("credentials.config")
     @connection = Fog::Compute.new(:provider => 'AWS')
@@ -259,7 +259,7 @@ class CloudHelper
     wait_for_command(server, 'which chef-solo', /bin/)
     state(server, "chef_start")
     # TODO: chef-solor the correct way.
-    chef_solo = "/var/lib/gems/1.8/bin/chef-solo"
+    chef_solo = "chef-solo"
     sudo server, "cd #{CHEF_FILE_CACHE_PATH} && cp -r /home/#{self.login_user}/cookbooks.tgz ."
     sudo server, "cd #{CHEF_FILE_CACHE_PATH} && cp -r /home/#{self.login_user}/dna.json ."
     sudo server, "cd #{CHEF_FILE_CACHE_PATH} && #{chef_solo} -c solo.rb -j dna.json -r cookbooks.tgz"
