@@ -17,7 +17,7 @@ class CloudHelper
   CHEF_FILE_CACHE_PATH = "/tmp/cheftime"
   
   # TODO: WISE image specific
-  VLE_NODE_DIR='/var/lib/tomcat6/webapps/vlewrapper/vle/node/'
+  VLE_NODE_DIR='/var/lib/tomcat7/webapps/vlewrapper/vle/node/'
 
 
   def initialize(configuration_file=CloudHelper.config_file)
