@@ -3,7 +3,9 @@
       "java_options":"-Xms128m -Xmx256m -XX:PermSize=128m -XX:MaxPermSize=256m"
    },
    "mysql":{
-      "server_root_password":"password",
+      "server_root_password":"8B2Fx3D31Dac94864",
+      "server_repl_password":"8B2Fx3D31Dac94864",
+      "server_debian_password":"8B2Fx3D31Dac94864",
       "bind_address":"127.0.0.1"
    },
    "wise4_port":8080,
