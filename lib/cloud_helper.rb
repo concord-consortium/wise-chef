@@ -7,7 +7,7 @@ class CloudHelper
   DefaultGroupName='wise4-dev'
   DefaultPorts    = [22,25,80,8080]
   DefaultUser     = 'ubuntu'
-  DefaultAmiImage = 'ami-57588e3e'
+  DefaultAmiImage = 'ami-9878c0f1'
   DefaultName     = 'wise_ec2'
   DefaultTimeout  = 1000 * 60 * 10   # 5 minutes
   StateFile       = '/tmp/cloud_state'
