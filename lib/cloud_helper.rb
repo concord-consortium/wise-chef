@@ -125,6 +125,13 @@ class CloudHelper
     ssh(server,'~/restore.sh')
   end
 
+  def clone(source_id)
+    # TODO:
+    # 1 create a server (and a handle to it as new_server)
+    # 2 backup source_id
+    # 3 push changes to new_server
+  end
+  
   def rsync(id)
     ssh_cmd = ssh_cli_string(id)
     puts "synching wise 4 steps #{@wise4_step_types.inspect}"
