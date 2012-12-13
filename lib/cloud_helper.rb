@@ -107,6 +107,17 @@ class CloudHelper
     server.destroy
   end
 
+  def backup(id)
+    server = @connection.servers.get(id)
+    ssh(server,'~/backup.sh')
+    server.scp_download('backup/current.tar.gz','backup.tar.gz')
+  end
+
+  def restore(id)
+    server = @connection.servers.get(id)
+    server.scp('backup.tar.gz','backup.tar.gz')
+  end
+
   def rsync(id)
     ssh_cmd = ssh_cli_string(id)
     puts "synching wise 4 steps #{@wise4_step_types.inspect}"

@@ -50,6 +50,18 @@ class Cloud < Thor
     helper.rsync(id) 
   end
 
+  desc "backup (id)", "create WISE4 backup of remote machine (id)"
+  def backup(id=nil)
+    helper = CloudHelper.new
+    helper.backup(id) 
+  end
+
+  desc "restore (id)", "push WISE4 backup.tar.gz to remote machine (id)"
+  def restore(id=nil)
+    helper = CloudHelper.new
+    helper.restore(id) 
+  end
+
   desc "state [id][state]", "manually set the [state] for machine [id]"
   def state(id,state)
     helper = CloudHelper.new
