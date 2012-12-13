@@ -107,12 +107,16 @@ class CloudHelper
     server.destroy
   end
 
+  # wise-cookbooks post 12-13-2012 include scripts
+  # to backup and restore wise4 sql and curriculum.
   def backup(id)
     server = @connection.servers.get(id)
     ssh(server,'~/backup.sh')
     server.scp_download('backup/current.tar.gz','backup.tar.gz')
   end
 
+  # wise-cookbooks post 12-13-2012 include scripts
+  # to backup and restore wise4 sql and curriculum.
   def restore(id)
     server = @connection.servers.get(id)
     # copy the local backup file to remote id
