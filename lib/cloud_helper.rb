@@ -115,7 +115,10 @@ class CloudHelper
 
   def restore(id)
     server = @connection.servers.get(id)
+    # copy the local backup file to remote id
     server.scp('backup.tar.gz','backup.tar.gz')
+    # run the remote script to do the restore. 
+    ssh(server,'~/restore.sh')
   end
 
   def rsync(id)
