@@ -37,7 +37,19 @@ if you want to change the wise4 recipes, checkout the wise-cookbooks repo, and m
     
     bundle exec librarian-chef update
 
+## wish list ##
 
+* Remember the last EC2 host connected to, so that all commands default to dealing with that host. (eg `thor cloud ssh` just works!)
+* Add command to clone a running instance to a new instance. (eg `thor cloud clone EC2_ID` builds a copy of a wise instance by running `cloud backup`, `cloud provision`, and `cloud restore` in sequence.)
+* Auto-Update the cookbooks by running 'bundle exec librarian-chef update' automatically every 'n' days, or at startup or something. TBD
+* Restructure cloud_helper as Thor application, so commands don't need to be prefixed by "Thor", and cloud.thor can be dropped.
+* Move cloud_helper into a packaged GEM with binaries.
+* Interactive configuration if config files are missing.
+* Bash completion for cloud_helper commands in the shell.
+* Export ENV variables that relate to current host and WISE setup. (imagine exporting the WISE_RSYNC command)
+* Better documentation to encourage adoption and contribution.
+* Cache EC2 server information for faster listing / info.
+* Interactive menu driven interface (dream big right?)
 
 ## TODO ##
 
