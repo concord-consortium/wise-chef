@@ -28,8 +28,14 @@ It uses Librian to install and import chef cookbooks into ./cookbooks. Currently
     bundle exec librarian-chef install
     cp config/credentials.config.sample config/credentials.config
     edit config/credentials.config
+    cp dna.json.sample dna.json
+    edit dna.json
     # optionally move some pem files into config/keys
     bundle exec thor cloud new
+
+## modifying your setup ##
+
+Edit dna.json to change the version of wise4 to download, or modify any other settings.  In my dna.json I specify a known release of 4.6 to download.
 
 ## updating the cookbooks ##
 

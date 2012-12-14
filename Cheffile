@@ -13,11 +13,14 @@ cookbook "java"
 #cookbook "maven"  # this cookbook isn't working from opscode.
 
 
-# export WISE_COOKBOOKS_URL="file://path/to/local/repo"
 github_url = "git://github.com/concord-consortium/wise-cookbooks.git"
 
+# For development, export WISE_COOKBOOKS_URL to bash
+# in order to develop cookbooks locally ... eg:
+# export WISE_COOKBOOKS_URL="file://path/to/local/repo"
 
 wise_cookbooks_url = ENV['WISE_COOKBOOKS_URL'] || github_url
+
 puts "using #{wise_cookbooks_url} for WISE-4 cookbooks (set WISE_COOKBOOKS_URL to change)"
 
 cookbook "tomcat",

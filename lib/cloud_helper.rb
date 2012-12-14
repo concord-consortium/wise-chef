@@ -67,8 +67,10 @@ class CloudHelper
     user = ENV['USER'] || env['USERNAME'] || 'unknown'
     check_keys()
 
-    #TODO: This is weird place to create a security group
-    group = make_group
+    # TODO: This is weird place to create a security group
+    # we do this to ensure the security group exists.
+    make_group()
+    
     server = @connection.servers.bootstrap(
       # :image_id => 'ami-245fac4d',
       :image_id   => self.ami_image,
